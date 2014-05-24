@@ -51,3 +51,5 @@ MergedData$Activity[MergedData$Activity == "6"] <- "Laying"
 tidy<-melt(MergedData, id=c("Subject", "Activity"))
 
 tidyData<-dcast(tidy, Subject + Activity ~ variable, fun.aggregate=mean)
+
+write.table(tidyData, file = "tidyData.txt")
